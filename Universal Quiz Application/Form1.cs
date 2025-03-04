@@ -329,38 +329,4 @@ function QuizContainer() {
     }, 1000);
   };
 
-  return (
-    <div className="quiz-container">
-      {!isQuizFinished ? (
-        <>
-          <div className="quiz-header">
-            <h1>Simple Quiz</h1>
-            <Timer onTimeUp={handleTimeUp} seconds={30} />
-            <p>Question {currentQuestion + 1} of {quizData.length}</p>
-            <p>Score: {score}</p>
-          </div>
-          <QuizQuestion 
-            question={quizData[currentQuestion].question}
-            options={quizData[currentQuestion].options}
-            onAnswerSubmit={handleAnswer}
-            showFeedback={showFeedback}
-          />
-        </>
-      ) : (
-        <div className="quiz-results">
-          <h2>Quiz Complete!</h2>
-          <p>Your final score: {score} out of {quizData.length}</p>
-          <button 
-            className="submit-button"
-            onClick={() => window.location.reload()}
-          >
-            Try Again
-          </button>
-        </div>
-      )}
-    </div>
-  );
-}
-
-export default QuizContainer;
-
+ 
